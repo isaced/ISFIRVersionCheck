@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B28F64E1D47690A00020C38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B28F64D1D47690A00020C38 /* LaunchScreen.storyboard */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B28F64D1D47690A00020C38 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31EA5C5A6D5226FDA8AB1060 /* ISFIRVersionCheck.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ISFIRVersionCheck.podspec; path = ../ISFIRVersionCheck.podspec; sourceTree = "<group>"; };
 		35CEEFDF6CE39B7160473F64 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		4C4968B68C89ADB8A2CF9CBE /* Pods_ISFIRVersionCheck_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ISFIRVersionCheck_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 				6003F5A6195388D20070C39A /* ISViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				0B28F64D1D47690A00020C38 /* LaunchScreen.storyboard */,
 			);
 			name = "Example for ISFIRVersionCheck";
 			path = ISFIRVersionCheck;
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				0B28F64E1D47690A00020C38 /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -511,11 +515,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97F5ADE3625ED9DAA9E84CE6 /* Pods-ISFIRVersionCheck_Example.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISFIRVersionCheck/ISFIRVersionCheck-Prefix.pch";
 				INFOPLIST_FILE = "ISFIRVersionCheck/ISFIRVersionCheck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,11 +530,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A05B215FE8B3E1378D097F64 /* Pods-ISFIRVersionCheck_Example.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ISFIRVersionCheck/ISFIRVersionCheck-Prefix.pch";
 				INFOPLIST_FILE = "ISFIRVersionCheck/ISFIRVersionCheck-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
