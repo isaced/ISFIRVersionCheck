@@ -29,9 +29,9 @@
     return sharedInstance;
 }
 
-+ (void)setAppID:(NSString *)appID :(NSString *)APIToken{
-    [[self sharedInstance] setFirAppID:appID];
-    [[self sharedInstance] setFirAPIToken:APIToken];
++ (void)setAppID:(NSString *)appID APIToken:(NSString *)APIToken{
+    [ISFIRVersionCheck sharedInstance].firAppID = appID;
+    [ISFIRVersionCheck sharedInstance].firAPIToken = APIToken;
 }
 
 + (void)check{
@@ -47,18 +47,25 @@
             NSError *jsonError = nil;
             id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             if (!jsonError && [object isKindOfClass:[NSDictionary class]]) {
-                NSString *version = object[@"version"];
-                NSString *build = object[@"build"];
-                NSString *changelog = object[@"changelog"];
-                NSString *update_url = object[@"update_url"];
-                NSString *currentBuild = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+                NSString *code = object[@"code"];
+                NSString *errors = object[@"errors"];
                 
-                if ([build integerValue] > [currentBuild integerValue]) {
-                    NSLog(@"FIR － 检测到新版本 v%@(%@) ",version,build);
-                    NSLog(@"FIR － 更新内容: \n%@ ",changelog);
+                if (code && errors) {
+                    NSLog(@"FIR - 新版本检测失败! (%@,%@)", code, errors);
+                }else{
+                    NSString *version = object[@"version"];
+                    NSString *build = object[@"build"];
+                    NSString *changelog = object[@"changelog"];
+                    NSString *update_url = object[@"update_url"];
+                    NSString *currentBuild = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
                     
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"检测到新版本" message:changelog delegate:[self sharedInstance] cancelButtonTitle:@"暂不更新" otherButtonTitles:@"前去更新", nil];
-                    [alertView show];
+                    if ([build integerValue] > [currentBuild integerValue]) {
+                        NSLog(@"FIR － 检测到新版本 v%@(%@) ",version,build);
+                        NSLog(@"FIR － 更新内容: \n%@ ",changelog);
+                        
+                        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"检测到新版本" message:changelog delegate:[ISFIRVersionCheck sharedInstance] cancelButtonTitle:@"暂不更新" otherButtonTitles:@"前去更新", nil];
+                        [alertView show];
+                    }
                 }
             }
         }
