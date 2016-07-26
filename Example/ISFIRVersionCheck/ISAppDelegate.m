@@ -15,6 +15,7 @@
 {
     // Override point for customization after application launch.
     
+//    [ISFIRVersionCheck setAPIToken:@""];
     [ISFIRVersionCheck setAppID:@"" APIToken:@""];
     [ISFIRVersionCheck check];
     

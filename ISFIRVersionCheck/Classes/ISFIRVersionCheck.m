@@ -29,15 +29,22 @@
     return sharedInstance;
 }
 
++(void)setAPIToken:(NSString *)APIToken{
+    [ISFIRVersionCheck sharedInstance].firAPIToken = APIToken;
+}
+
 + (void)setAppID:(NSString *)appID APIToken:(NSString *)APIToken{
     [ISFIRVersionCheck sharedInstance].firAppID = appID;
     [ISFIRVersionCheck sharedInstance].firAPIToken = APIToken;
 }
 
 + (void)check{
-    NSString *appid = [[self sharedInstance] firAppID];
-    NSString *apiToken = [[self sharedInstance] firAPIToken];
-    NSString *idUrlString = [NSString stringWithFormat:@"http://api.fir.im/apps/latest/%@?api_token=%@",appid,apiToken];
+    NSString *idString = [ISFIRVersionCheck sharedInstance].firAppID;
+    if (!idString) {
+        idString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleIdentifierKey];
+    }
+    NSString *apiToken = [ISFIRVersionCheck sharedInstance].firAPIToken;
+    NSString *idUrlString = [NSString stringWithFormat:@"http://api.fir.im/apps/latest/%@?api_token=%@",idString,apiToken];
     NSURL *requestURL = [NSURL URLWithString:idUrlString];
     NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
