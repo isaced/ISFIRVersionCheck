@@ -12,14 +12,14 @@ Pod::Spec.new do |s|
   s.summary          = 'fir 版本自动检测，有新版本弹 Alert 前往更新'
 
   s.description      = <<-DESC
-                        自动检测 fir 新版本，并提示更新
+                        基于 fir 对比 build 版本号自动检测新版本信息，有新版本弹 Alert 前往更新。
                        DESC
 
   s.homepage         = 'https://github.com/isaced/ISFIRVersionCheck'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.screenshots     = 'https://raw.githubusercontent.com/isaced/ISFIRVersionCheck/master/screenshot.png'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'isaced' => 'isaced@163.com' }
-  s.source           = { :git => 'https://github.com/isaced/ISFIRVersionCheck.git', :branch => 'master' }
+  s.source           = { :git => 'https://github.com/isaced/ISFIRVersionCheck.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '7.0'
 
