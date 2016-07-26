@@ -28,7 +28,9 @@ pod 'ISFirVersionCheck'
 
 - fir.im - 版本检测 : https://fir.im/docs/version_detection
 
-版本比对：当前项目 build 如果小于最新的则弹出 Alert，前往更新 url 取的接口返回值中的 update_url 参数。
+版本比对：当前项目 build 如果小于最新的则弹出 Alert，前往更新 url 取的接口返回值中的 update_url 字段。
+
+更新内容：Alert 中的 changlog 取的是 fir 后台每版本的 "更新日志"，对应接口返回中的 changelog 字段，可以随时在 fir 后台修改即生效。
 
 ### Build 版本号递增
 
