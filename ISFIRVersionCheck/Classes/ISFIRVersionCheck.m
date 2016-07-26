@@ -57,6 +57,8 @@
                     NSString *build = object[@"build"];
                     NSString *changelog = object[@"changelog"];
                     NSString *update_url = object[@"update_url"];
+                    
+                    [ISFIRVersionCheck sharedInstance].updateURL = update_url;
                     NSString *currentBuild = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
                     
                     if ([build integerValue] > [currentBuild integerValue]) {
