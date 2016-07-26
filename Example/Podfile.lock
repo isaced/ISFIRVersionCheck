@@ -1,0 +1,16 @@
+PODS:
+  - ISFIRVersionCheck (0.1.0)
+
+DEPENDENCIES:
+  - ISFIRVersionCheck (from `../`)
+
+EXTERNAL SOURCES:
+  ISFIRVersionCheck:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ISFIRVersionCheck: 71d0475aff6875b1a443e5819e9d27dfc6ff46d5
+
+PODFILE CHECKSUM: 864bb3da9bf8327c65daec21ce7345ae6350db09
+
+COCOAPODS: 1.0.1

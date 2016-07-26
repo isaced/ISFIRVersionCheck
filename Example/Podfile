@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ISFIRVersionCheck_Example' do
+  pod 'ISFIRVersionCheck', :path => '../'
+
+  target 'ISFIRVersionCheck_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
