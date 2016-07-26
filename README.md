@@ -6,7 +6,7 @@
 ### CocoaPods
 
 ```
-pod 'ISFirVersionCheck'
+pod 'ISFIRVersionCheck'
 ```
 
 ### 设置
