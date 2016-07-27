@@ -11,9 +11,13 @@ pod 'ISFIRVersionCheck'
 
 ### 设置
 
-可以在 AppDelegate 中配置应用在 fir 上的 ID，和其帐号的 api_token. (可在 fir 后台查看)
+可以在 AppDelegate 中配置应用在 fir 上的 ID，和其帐号的 api_token. (可在 fir 后台查看)，以下两种方式任选其一即可
 
 ```
+// 使用 api_token 初始化，根据 bundle id 自动匹配应用
+[ISFIRVersionCheck setAppID:@"" APIToken:@""];
+
+// 使用 app_id 和 api_token 初始化 
 [ISFIRVersionCheck setAppID:@"" APIToken:@""];
 ```
 
