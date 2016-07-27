@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ISFIRVersionCheck'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'fir 版本自动检测，有新版本弹 Alert 前往更新'
 
   s.description      = <<-DESC
