@@ -15,7 +15,7 @@ pod 'ISFIRVersionCheck'
 
 ```
 // 使用 api_token 初始化，根据 bundle id 自动匹配应用
-[ISFIRVersionCheck setAppID:@"" APIToken:@""];
+[ISFIRVersionCheck setAPIToken:@""];
 
 // 使用 app_id 和 api_token 初始化 
 [ISFIRVersionCheck setAppID:@"" APIToken:@""];
